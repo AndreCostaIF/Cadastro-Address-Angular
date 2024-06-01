@@ -71,7 +71,7 @@ export class cadastroEnderecoComponent {
       ).subscribe({
         next: () => {
           this.toastr.success("Cadastro feito com sucesso!");
-          //this.navigate()
+          this.navigate()
         },
         error: () => this.toastr.error("Erro inesperado! Tente novamente mais tarde2")
       })

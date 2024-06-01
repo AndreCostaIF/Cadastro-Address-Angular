@@ -19,13 +19,14 @@
       </mat-card-content>
 
     <mat-card-actions>
-        <button mat-button>
+        <button mat-button  (click)="editEndereco(endereco.id)">
             <mat-icon class="icon-edit" aria-hidden="false"
                 aria-label="Example home icon" fontIcon="edit"></mat-icon>
         </button>
-        <button mat-button>
+       
+        <button mat-button (click)="deletar(endereco.id)">
             <mat-icon class="icon-delete" aria-hidden="false"
-                aria-label="Example home icon" fontIcon="delete"></mat-icon>
+                aria-label="Example home icon"  fontIcon="delete"></mat-icon>
         </button>
     </mat-card-actions>
 </mat-card>

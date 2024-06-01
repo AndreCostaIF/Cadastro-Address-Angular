@@ -1,0 +1,102 @@
+<app-default-edit-layout
+    title="Informe os dados do endereço novo!"
+    primaryBtnText="Editar"
+    secondaryBtnText="Voltar"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!EditForm.valid">
+
+    <form [formGroup]="EditForm">
+
+        <app-primary-input
+            formControlName="idEndereco"
+            inputName="idEndereco"
+            type="hidden"
+            >
+
+            <mat-icon class="icon-delete" aria-hidden="false"
+            aria-label="Example home icon" fontIcon="edit"></mat-icon>
+        </app-primary-input>
+
+        <!--INPUT NOME-->
+        <app-primary-input
+            formControlName="rua"
+            inputName="rua"
+            type="text"
+            label="Rua"
+            placeholder="Av. Castelo Branco ">
+
+            <img src="/assets/svg/mail.svg" height="20px" alt>
+        </app-primary-input>
+
+        <!--INPUT NOME-->
+        <app-primary-input
+            formControlName="numero"
+            inputName="numero"
+            type="text"
+            label="Número"
+            placeholder="12 ">
+
+            <img src="/assets/svg/mail.svg" height="20px" alt>
+        </app-primary-input>
+
+        <!--INPUT NOME-->
+        <app-primary-input
+            formControlName="bairro"
+            inputName="bairro"
+            type="text"
+            label="bairro"
+            placeholder="Belo Horizonte">
+
+            <img src="/assets/svg/mail.svg" height="20px" alt>
+        </app-primary-input>
+       
+        <!--INPUT NOME-->
+        <app-primary-input
+            formControlName="complemento"
+            inputName="complemento"
+            type="text"
+            label="Complemento"
+            placeholder="Proximo ao mercadinho">
+
+            <img src="/assets/svg/mail.svg" height="20px" alt>
+        </app-primary-input>
+
+        <!--INPUT NOME-->
+        <app-primary-input
+            formControlName="cidade"
+            inputName="cidade"
+            type="text"
+            label="Cidade"
+            placeholder="Patos">
+
+            <img src="/assets/svg/mail.svg" height="20px" alt>
+        </app-primary-input>
+
+
+          <!--INPUT NOME-->
+          <app-primary-input
+          formControlName="uf"
+          inputName="uf"
+          type="text"
+          label="UF"
+          placeholder="PB">
+
+          <img src="/assets/svg/mail.svg" height="20px" alt>
+      </app-primary-input>
+
+
+      <!--INPUT NOME-->
+      <app-primary-input
+      formControlName="cep"
+      inputName="cep"
+      type="text"
+      label="cep"
+      placeholder="xxxxx-xxx">
+
+      <img src="/assets/svg/mail.svg" height="20px" alt>
+  </app-primary-input>
+
+    </form>
+
+</app-default-edit-layout>
