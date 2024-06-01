@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="cabecalho">
+    <div>
+      <h1>Bem-vindo, {{ user.name }}!</h1>
+      <h2>Seus Endereços:</h2>
+    </div>
+    
+    <div class="btnCabecalho">
+      <button (click)="addEndereco()">Cadastrar novo endereço</button>
+      
+      <button (click)="logout()" class="logout"> <mat-icon class="icon-delete" aria-hidden="false"
+        aria-label="Example home icon" fontIcon="logout"></mat-icon></button>
+    </div>
+  </div>
+  
+    
+   
+
+    <div class="">
+      <card-endereco class="enderecos" ></card-endereco>
+    
+  </div>
+
+    
+  
+  </div>
+  

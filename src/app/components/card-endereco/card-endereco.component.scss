@@ -1,0 +1,68 @@
+@import "../../../styles/variables.scss";
+
+.example-card {
+    max-width: 400px;
+    margin-bottom: 20px;    
+    margin-right: 50px;
+  }
+
+
+mat-card{
+  border: 1px solid black;
+  margin-bottom: 10px;
+  width: 100%;
+  text-transform: uppercase;
+
+  mat-card-title{
+    font-weight: bold;
+    color: $primary-color;
+    text-align: start;
+    
+  }
+
+  mat-card-subtitle{
+    text-align: start;
+    font-size: 14px;
+    opacity: 0.8;
+    font-weight: 600;
+
+   .uf{
+      text-transform: uppercase;
+    
+    }
+
+    .cidade{
+      text-transform: capitalize;
+    }
+  }
+
+  mat-card-content{
+    text-align: start;
+    font-size: 14px;
+    opacity: 0.8;
+    font-weight: 500;
+
+
+    .complemento{
+      text-transform: uppercase;
+    }
+  }
+
+  mat-card-actions{
+    
+    display: flex;
+    justify-content: end;
+    
+
+    mat-icon{
+     
+      &.icon-edit{
+        color: blue;
+      }
+
+      &.icon-delete{
+        color: red;
+      }
+    }
+  }
+}

@@ -6,8 +6,15 @@ import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
 
+interface SignupForm{
+  name: FormControl,
+  email: FormControl,
+  password: FormControl,
+  passwordConfirm: FormControl
+}
+
 @Component({
-  selector: 'app-login',
+  selector: 'app-signup',
   standalone: true,
   imports: [
     DefaultLoginLayoutComponent,
@@ -18,41 +25,38 @@ import { ToastrService } from 'ngx-toastr';
   providers:[ 
     LoginService
   ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  templateUrl: './signup.component.html',
+  styleUrl: './signup.component.scss'
 })
-export class LoginComponent {
-  loginForm!: FormGroup; 
+export class SignupComponent {
+  signupForm!: FormGroup<SignupForm>; 
 
   
 
   constructor(private router: Router, private loginService: LoginService, private toastr: ToastrService){
-    //VALIDAÇÃO DO FORM
-    this.loginForm = new FormGroup({
+   
+    this.signupForm = new FormGroup({
+      name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)])
+      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      passwordConfirm: new FormControl('', [Validators.required, Validators.minLength(6)])
     })
   }
 
 
   //FUNÇÃO PARA ENVIAR OS DADOS PARA O BACKEND
   submit(){
-    this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
+    this.loginService.signup(this.signupForm.value.name, this.signupForm.value.email, this.signupForm.value.password).subscribe({
       next: () => {
-        this.toastr.success("Login feito com sucesso");
-        this.navigateHome(); // Chama a função navigateHome após o login bem-sucedido
-
+        this.toastr.success("Cadastro feito com sucesso!");
+        this.navigate()
       },
       error: () => this.toastr.error("Erro inesperado! Tente novamente mais tarde")
     })
-    //console.log(this.loginForm.value)
+    //console.log(this.signupForm.value)
   }
 
   navigate(){
-    this.router.navigate(["/signup"])
-  }
-
-  navigateHome(){
-    this.router.navigate(["/home"])
+    this.router.navigate(["login"])
   }
 }
